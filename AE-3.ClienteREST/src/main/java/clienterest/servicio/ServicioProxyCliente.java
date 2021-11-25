@@ -34,7 +34,7 @@ public class ServicioProxyCliente {
 				return null;
 			}
 		} catch (HttpClientErrorException e) {
-			System.out.println("Obtener: la persona No se ha encontrado, id: " + id);
+			System.out.println("Obtener: el videojuego No se ha encontrado, id: " + id);
 			System.out.println("Obtener: Codigo de respuesta: " + e.getStatusCode());
 			return null;
 		}
@@ -47,7 +47,7 @@ public class ServicioProxyCliente {
 			System.out.println("Alta: Codigo de respuesta " + re.getStatusCodeValue());
 			return re.getBody();
 		} catch (HttpClientErrorException e) {
-			System.out.println("Alta: La persona NO se ha dado de alta, id: " + v);
+			System.out.println("Alta: el videojuego NO se ha dado de alta, id: " + v);
 			System.out.println("Alta: Codigo de respuesta: " + e.getStatusCode());
 			return null;
 		}
@@ -62,7 +62,7 @@ public class ServicioProxyCliente {
 			restTemplate.put(URL + v.getId(), v, Videojuego.class);
 			return true;
 		} catch (HttpClientErrorException e) {
-			System.out.println("modificar -> La persona NO se ha modificado, id: " + v.getId());
+			System.out.println("modificar -> el videojuego NO se ha modificado, id: " + v.getId());
 		    System.out.println("modificar -> Codigo de respuesta: " + e.getStatusCode());
 		    return false;
 		}
@@ -74,7 +74,7 @@ public class ServicioProxyCliente {
 			restTemplate.delete(URL + id);
 			return true;
 		} catch (HttpClientErrorException e) {
-			System.out.println("Borrar: La persona NO se ha de borrado, id: " + id);
+			System.out.println("Borrar: El videojuego NO se ha de borrado, id: " + id);
 			System.out.println("Borrar: Codigo de respuesta: " + e.getStatusCode());
 			return false;
 		}

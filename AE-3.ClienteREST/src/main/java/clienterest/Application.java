@@ -46,20 +46,20 @@ public class Application implements CommandLineRunner{
 		//Hacemos un bucle infinito de el que se saldra con una opcion del menu
 		do {
 			System.out.println("Cliente: Elige la opcion de lo que quieras  hacer: \n 1) Dar de alta un videojuego \n 2) Dar de baja un videojuego por ID \n 3) Modificar un videojuego por ID \n 4) Obtener un videojuego por ID \n 5) Listar todos los videojuegos \n 6) Salir");
-			String respuesta = leer.next();
+			String respuesta = leer.nextLine();
 			
 			switch (respuesta) {
 			//Dar de alta un videojuego
 			case "1":
 				Videojuego video = new Videojuego();
 				System.out.println("Introduzca el nombre del videojuego: ");
-				respuesta = leer.next();
-				video.setNombre(respuesta);
+				String nombre = leer.nextLine();
+				video.setNombre(nombre);
 				System.out.println("Introduzca el nombre de la compañia: ");
-				respuesta = leer.next();
-				video.setCompañia(respuesta);
+				String compañia = leer.nextLine();
+				video.setCompañia(compañia);
 				System.out.println("Introduzca la nota del videojuego: ");
-				respuesta = leer.next();
+				respuesta = leer.nextLine();
 				try {
 				video.setNota(Integer.parseInt(respuesta));
 				} catch (NumberFormatException e) {
@@ -72,7 +72,7 @@ public class Application implements CommandLineRunner{
 			//Dar de baja un videjuego por el id
 			case "2":
 				System.out.println("Introduzca el id del videojuego que quiere borrar: ");
-				respuesta = leer.next();
+				respuesta = leer.nextLine();
 				boolean borrada = spc.borrar(Integer.parseInt(respuesta));
 				System.out.println("run -> Videojuego con id " + respuesta + " borrado? " + borrada);	
 				break;
@@ -81,16 +81,16 @@ public class Application implements CommandLineRunner{
 			case "3":
 				Videojuego vModificar = new Videojuego();
 				System.out.println("Introduzca el id del videojuego que quiere modificar: ");
-				respuesta = leer.next();
+				respuesta = leer.nextLine();
 				vModificar.setId(Integer.parseInt(respuesta));
 				System.out.println("Introduzca el nombre del videojuego: ");
-				respuesta = leer.next();
+				respuesta = leer.nextLine();
 				vModificar.setNombre(respuesta);
 				System.out.println("Introduzca el nombre de la compañia: ");
-				respuesta = leer.next();
+				respuesta = leer.nextLine();
 				vModificar.setCompañia(respuesta);
 				System.out.println("Introduzca la nota del videojuego: ");
-				respuesta = leer.next();
+				respuesta = leer.nextLine();
 				try {
 				vModificar.setNota(Integer.parseInt(respuesta));
 				} catch (NumberFormatException e) {
@@ -103,7 +103,7 @@ public class Application implements CommandLineRunner{
 			//Mostrar un videojuego por el id
 			case "4":
 				System.out.println("Introduzca el id del videojuego que quiere: ");
-				respuesta = leer.next();
+				respuesta = leer.nextLine();
 				video = spc.obtener(Integer.parseInt(respuesta));
 				System.out.println("run ->a" + video);
 				break;
