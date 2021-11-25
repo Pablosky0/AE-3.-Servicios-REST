@@ -27,7 +27,7 @@ public class DaoVideojuego {
 		listaVideojuegos.add(v5);
 	}
 	
-	//Metodo que devuelve un videojuego a partir de su posicion
+	//Metodo que devuelve un videojuego a partir de su id
 	public Videojuego get(int posicion) {
 		try {
 			return listaVideojuegos.get(posicion);
@@ -37,7 +37,7 @@ public class DaoVideojuego {
 		}
 	}
 	
-	//Metodo que debuelve la lista de videojuegos
+	//Metodo que devuelve la lista de videojuegos
 	public List<Videojuego> list() {
 		return listaVideojuegos;
 	}
@@ -59,7 +59,7 @@ public class DaoVideojuego {
 		}
 	}
 	
-	//Metodo que borra una persona por posicion
+	//Metodo que borra un videojuego por id
 	public Videojuego delete(int posicion) {
 		try {
 			return listaVideojuegos.remove(posicion);
@@ -69,7 +69,7 @@ public class DaoVideojuego {
 		}
 	}
 	
-	//Metodo que modifica un videojuego por posicion
+	//Metodo que modifica un videojuego por id
 	public Videojuego update(Videojuego v) {
 		try {
 			Videojuego vAux = listaVideojuegos.get(v.getId());
@@ -79,7 +79,7 @@ public class DaoVideojuego {
 			
 			return vAux;
 		} catch (IndexOutOfBoundsException e) {
-			System.out.println("Persona fuera de rango");
+			System.out.println("Videojuego fuera de rango");
 			return null;
 		}
 	}
