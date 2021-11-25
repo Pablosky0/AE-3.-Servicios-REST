@@ -12,10 +12,13 @@ import org.springframework.web.client.RestTemplate;
 
 import clienterest.entidad.Videojuego;
 
+//Damos de alta el servicio
 @Service
 public class ServicioProxyCliente {
+	//La URL del servicio REST
 	public static final String URL = "http://localhost:2018/videojuegos/";
 	
+	//Inyectamos el objeto RestTemplate para hacer las peticiones HTTP
 	@Autowired
 	private RestTemplate restTemplate;
 	

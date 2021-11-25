@@ -1,5 +1,6 @@
 package serviciorest.entidad;
 
+//Entidad con la que trabajamos
 public class Videojuego {
 	private int id;
 	private String nombre;

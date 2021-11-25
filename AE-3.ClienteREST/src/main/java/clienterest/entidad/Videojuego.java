@@ -2,6 +2,7 @@ package clienterest.entidad;
 
 import org.springframework.stereotype.Component;
 
+//Entidad con la que vamos a trabajar
 @Component
 public class Videojuego {
 	private int id;
